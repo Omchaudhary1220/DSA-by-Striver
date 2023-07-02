@@ -7,8 +7,6 @@ int main(){
     map<int, int>mp;
     for(int i=0;i<n;i++){
         cin>>arr[i];
-    }
-    for(int i=0;i<n;i++){
         mp[arr[i]]++;
     }
     int t;
