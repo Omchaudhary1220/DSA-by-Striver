@@ -5,6 +5,6 @@ int largestElement(vector<int> &arr, int n) {
         if(arr[i]>max){
             max=arr[i];
         }
-    }
+     }
     return max;
 }
