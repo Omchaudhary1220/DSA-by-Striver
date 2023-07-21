@@ -3,7 +3,7 @@ problem link:- https://www.codingninjas.com/studio/problems/reading_6845742?utm_
   given an array and we have to find a pair which is equal to target.
   */
 
-//brute force solution is uisng two loop to find all pair and check is equal.
+//brute force solution is using two loop to find all pair and check is equal.
 
 // better solution putting all value in map and checking how much more value is needed if more value is present in map it means we will add both value to get target.
 //time complexity of map approch:- O(n) and S.C=O(n)
