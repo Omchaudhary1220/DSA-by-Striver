@@ -3,6 +3,7 @@
 using namespace std;
 class Solution {
   private:
+  //time complexity is O(n!*n) and space complexity is O(n) by not including ans vectors
     void recurPermute(vector < int > & ds, vector < int > & nums, vector < vector < int >> & ans, int freq[]) {
       if (ds.size() == nums.size()) {
         ans.push_back(ds);
