@@ -44,7 +44,29 @@ int longestConsecutive(vector<int>& nums) {
         maxi=max(count,maxi);
         return maxi;
 }
-
+//optimise solution
+int longestSuccessiveElements(vector<int>&a) {
+   int n=a.size();
+   int count=1;
+   int maxi=0;
+   if(n==0)return 0;
+   unordered_set<int>st;
+   for(int i=0;i<n;i++){
+       st.insert(a[i]);
+   }
+   for(auto i:st){
+       if(st.find(i-1)==st.end()){
+           count=1;
+           int elem=i;
+           while(st.find(elem+1)!=st.end()){
+               elem++;
+               count++;
+           }
+           maxi=max(count,maxi);
+       }
+   }
+   return maxi;
+}
 int main(){
     vector<int>nums={0,3,7,2,5,8,4,6,0,1};
     int ans=longestConsecutive(nums);
