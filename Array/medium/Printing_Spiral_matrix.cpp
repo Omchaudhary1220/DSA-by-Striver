@@ -9,7 +9,8 @@ vector<int> printSpiral(vector<vector<int>> mat) {
   int n = mat.size();
   int m = mat[0].size();
 
-  int top = 0, left = 0, bottom = n - 1, right = m - 1;
+  int top = 0, left = 0, bottom = n - 1, right = m - 1; //here top is pointing to first element of raw and right is pointing to last elemt is raw
+  // and left is pointing to first element from column and bottom is pointing to last raw.
 
   while (top <= bottom && left <= right) {
 
