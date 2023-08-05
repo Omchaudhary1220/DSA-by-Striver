@@ -35,3 +35,36 @@ vector<int> majorityElement(vector<int> v) {
 	}
 	return major;
 }
+//optimised solution using enhance moore's voting algorithm.
+vector<int> majorityElement(vector<int> v) {
+	vector<int>major;
+	int n=v.size();
+	int major_count=n/3+1;
+	int elem1=INT_MIN,elem2=INT_MIN;
+	int count1=0,count2=0;
+	for(int i=0;i<n;i++){
+		if(count1==0&&v[i]!=elem2){
+			count1++;
+			elem1=v[i];
+		}
+		else if(count2==0&&v[i]!=elem1){
+			count2++;
+			elem2=v[i];
+		}
+		else if(v[i]==elem1)count1++;
+		else if(v[i]==elem2)count2++;
+		else{
+			count1--;
+			count2--;
+		}
+	}
+    int cnt1=0,cnt2=0;
+	for(int i=0;i<n;i++){
+		if(v[i]==elem1)cnt1++;
+		if(v[i]==elem2)cnt2++;
+	}
+	if(cnt1>=major_count)major.push_back(elem1);
+	if(cnt2>=major_count)major.push_back(elem2);
+	sort(major.begin(),major.end());
+	return major;
+}
