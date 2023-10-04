@@ -12,7 +12,7 @@ int subarraysWithSumK(vector < int > a, int b) {
     }
     return count;
 }
-// optimise soloution with time complexity O(n^2) and s.c O(n)
+// optimise soloution with time complexity O(n) and s.c O(n)
 #include<bits/stdc++.h>
 int subarraysWithSumK(vector < int > a, int b) {
     unordered_map<int,int>mp;
