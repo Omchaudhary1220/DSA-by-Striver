@@ -1,0 +1,32 @@
+// brute force solution with time complexity O(n^2)
+int subarraysWithSumK(vector < int > a, int b) {
+    int count=0;
+    int n=a.size();
+    for(int i=0;i<n;i++){
+        int xored=a[i];
+        if(xored==b)count++;
+        for(int j=i+1;j<n;j++){
+            xored=xored^a[j];
+            if(xored==b)count++;
+        }
+    }
+    return count;
+}
+// optimise soloution with time complexity O(n^2) and s.c O(n)
+#include<bits/stdc++.h>
+int subarraysWithSumK(vector < int > a, int b) {
+    unordered_map<int,int>mp;
+    int count=0;
+    int n=a.size();
+    int xored=0;
+    for(int i=0;i<n;i++){
+        xored=xored^a[i];
+        if(xored==b)count++;
+        int rem=xored^b;
+        if(mp.find(rem)!=mp.end()){
+            count+=mp[rem];
+        }
+        mp[xored]++;
+    }
+    return count;
+}
