@@ -1,3 +1,4 @@
+Link:- https://leetcode.com/problems/palindrome-partitioning/
 class Solution {
 private:
     bool ispal(string str,int s,int e){
